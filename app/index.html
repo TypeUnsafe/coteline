@@ -30,7 +30,7 @@ title: The Coteline Programming Language
         is still a long shot.
       </p>
       <p>
-        With Coteline the wait is over, you can use Jigsaw <em>now!</em>
+        With <span class="coteline">Coteline</span> the wait is over, you can use Jigsaw <em>now!</em>
       </p>
 {% highlight ceylon %}
 "The best-ever ORM solution!"
@@ -50,11 +50,11 @@ jigsaw org.snoozebernate "3.0.0.beta" {
         developments.
       </p>
       <p>
-        <em>Coteline</em> is commited to the continued success of providing a stable foundation
+        <span class="coteline">Coteline</span> is commited to the continued success of providing a stable foundation
         for the development of your critical IT assets.
       </p>
       <p>
-        <em>Coteline</em> is a strict superset of Ceylon where the TypeUnsafe experts leveraged
+        <span class="coteline">Coteline</span> is a strict superset of Ceylon where the TypeUnsafe experts leveraged
         their incredible gut feeling to provide a beautiful language that will equally appeal to
         Hipsters and lead enterprise architects.
       </p>
@@ -67,8 +67,8 @@ jigsaw org.snoozebernate "3.0.0.beta" {
     <div class="col-md-6">
       <h2>Language improvements</h2>
       <p>
-        Gavin made some fundamentally <em>wrong</em> decisions when designing Ceylon.
-        <em>Coteline</em> fixes them. Period.
+        Gavin made some fundamentally <em>opiniated</em> decisions when designing Ceylon.
+        <span class="coteline">Coteline</span> fixes them. Period.
       </p>
       <ul>
         <li>"<code>public</code> as a service", because <code>shared</code> is not a good keyword.</li>
@@ -77,13 +77,88 @@ jigsaw org.snoozebernate "3.0.0.beta" {
         <li>Call an <code>object</code> a <code>singleton</code>.</li>
         <li>Use <code>const</code> <em>in lieu of</em> <code>value</code>.</li>
         <li>Write <code>def</code> as a Hipster-compliant variant of <code>function</code>.</li>
+        <li>Ink <code>Unit</code> instead of <code>void</code> in your fine-crafted <span class="coteline">Coteline</span>
+           definitions.</li>
         <li><code>contract</code> and <code>trait</code> carry more meaning than
           <code>interface</code> (and who cares about the actual formal semantics of these?).</li>
         <li>We think <code>pray</code> is a better replacement for <code>assert</code>, because
           this is what you actually do when you write assertions.</li>
+        <li><code>dynamic</code> blocks are better named as <code>unsafe</code> blocks, because they
+          escape the wonderland of static type checks.</li>
+        <li>Parametric types with <code>in / out</code> for contravariance and covariance are hard
+          to manipulate. This is also way too reminiscent of the C# world. <span class="coteline">Coteline</span>
+          provides salvation with <code>covar</code> and <code>contravar</code>.</li>
+        <li>Last but not least, you can also write <code>foreach</code> loops in <span class="coteline">Coteline</span>.</li>
       </ul>
     </div>
 
+    <div class="col-md-16">
+        <h2><span class="coteline">Coteline</span> in action</h2>
+{% highlight ceylon %}
+"The classic Hello World program"
+public Unit hello(String name = "World") {
+    const str = "Hello, `` name ``!";
+    def work() => print(str);
+    work();
+    pray(1 == 1);
+    plop.plop();
+    foreach (i in {1, 2, 3}) {
+        print(i);
+    }
+}
+
+singleton plop {
+    public Unit plop() {
+        print("Oh Plop!");
+    }
+}
+
+"Run the module `better.ceylon.is.coteline`."
+public Unit run(){
+    if (nonempty args=process.arguments) {
+        foreach (arg in args) {
+            hello(arg);
+        }
+    }
+    else {
+        hello();
+    }
+}
+{% endhighlight %}
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Quotes</h2>
+      <div class="media">
+        <div class="pull-left">
+          <img src="http://www.gravatar.com/avatar/7f477389948a608dc5a878c5e514629f" class="img-circle">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Julien Ponge</h4>
+          <blockquote>
+            I can honestly say if someone had shown me the <em>Programming in Coteline</em> book by
+            Philippe Charrière and Benny B back in 2012 I'd probably have never created
+            <a href="http://golo-lang.org/">Golo</a>.
+          </blockquote>
+        </div>
+      </div>
+      <div class="media">
+        <div class="pull-left">
+          <img src="http://www.gravatar.com/avatar/03c0a459fd631e867bade2cc95517a4f" class="img-circle">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Philippe Charrière</h4>
+          <blockquote>
+            I am going to code a new web stack in Coteline to serve BackboneJS applications.
+            I am also going to propose 10 lightning talks for the upcoming edition
+            of <a href="http://www.mix-it.fr">Mix-IT</a>.
+          </blockquote>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="row">
